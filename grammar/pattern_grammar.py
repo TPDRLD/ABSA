@@ -279,7 +279,6 @@ class PatternGrammar:
         for tgt in target_chunk:
             tgt_pos_tagged_part = tgt[0]
             sentiment_phrase_pos_tagged_list = Chunker.get_chunk(tgt_pos_tagged_part, 'JJ_NN_RB_VB')
-            # sentiment_phrase_pos_tagged_part = sentiment_phrase_pos_tagged_list[0]
             for sentiment_phrase_pos_tagged_part in sentiment_phrase_pos_tagged_list:
                 for single_sentiment_phrase in sentiment_phrase_pos_tagged_part:
                     target_word = ' '.join([i[0] for i in single_sentiment_phrase]).strip()
