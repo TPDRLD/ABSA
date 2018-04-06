@@ -21,15 +21,15 @@ class PatternGrammar:
                 # the place was amazing |
                 VBG_DESRIBING_NN: {<NN|NN.><VB|VB.>+<RB|RB.>*<VB|VB.>}""",
             3: """
-                # I loved the ambiance and the food. | enjoyed the taste.
+                # I loved the ambiance of the hotel. | enjoyed the stay.
                 VBG_DESCRIBING_NN_V3 : {<VB|VB.>+<DT>?<IN>?<NN.|NN>+(<CC|,>?<DT>?<JJ|JJ.>*<NN|NN.>+)*}  # noqa nopep8""",
             4: """
-                # Amazingly satisfying food
+                # Amazingly satisfying service
                 VBG_DESRIBING_NN_V2: {<RB|RB.>*<VB.|VBG>+<NN|NN.>}""",
             5: """
                 VBG_DESRIBING_NN_V5 :{<JJ|JJ.><N.|NN.><VB.|VB><RB>*<VB.>}""",
             6: """
-                # perfect place to have varied options in burgers
+                # perfect place to have varied options to transport
                 VBG_NN_DESCRIBING_NN: { <VBN><NN|NN.><IN><NN|NN.> }""",
             7: """
                 # improved on their service
@@ -39,34 +39,34 @@ class PatternGrammar:
             9: """
                 VBN_DESCRING_THE_FOLLOWING_NOUN : { <RB|JJ.|JJ>*<VB|VB.>+<IN|DT>?(<CC|,|TO>?<DT>?<NN|NN.>+)+}""",
             10: """
-                #i love east village pizza
+                #i love east gym
                 VB_DESCRBING_NN : { <VB|VB.>(<CC|,>?<RB|RB.><JJ|JJ.>*<NN|NN.>*)+}""",
 
             11: """
                 # the place was ok and good
-                # The Phirni here is a rich flavoured dessert | Place not worth visiting | the place was ok and good | the fish , chicken and biryani were so tastefull   # noqa nopep8
+                # The beds here are remarkable | Place not worth visiting | the place was ok and good | the toilets , bathroom and room itself were quite clean   # noqa nopep8
                 JJ_DESCRIBING_NN_V4 :{(<CC|,>*<DT>?<JJ|JJ.>*<NN|NN.>+)+(<IN><NN.|N.>)*<RB|RB.>*<VB|VB.>+<IN>?<DT>?(<CC|,>*<RB|RB.>*<JJ|JJ.>+<NN|NN.>*)+} # noqa nopep8""",
 
             12: """
                 # this place is always crowded, noisy and full #JJ_VBG_RB_DESRIBING_NN
-                # great food , service and ambience. | great food and service. | the served the lovely food. | they have a speedy delivery
-                # food is amazing
+                # great room and service | they had room services. | they have everyday cleanup
+                # Room is amazing
                 NN_IS_VBG : { <NN><VBZ><VB|VB.> }""",
             13: """
-                # they have a speedy delivery
+                # they have neat rooms
                 PRP_VB_NN : { <PRP><VBP|VB><DT>?<NN|NN.>+ }""",
             14: """
-                # they have a speedy delivery
+                # they have neat rooms
                 PRP_VB_NN : { <PRP><VBP|VB><DT>?<NN|NN.>+ }""",
             15: """
-                # nice for trying some authentic chinese
+                # nice for a short trip
                 NN_VB_DT_JJ_NN: { <NN><IN><VBG><DT><JJ><NN|NN.> }
             """,
             16: """
-                # vegans like me can also enjoy
+                # travellers like me can also enjoy
                 NN_MD_VB : {<NN|NN.><IN|PRP>*<MD><RB>?<VB><JJ>?} """,
             17: """
-                # They have awesome Indian and Chinese!
+                # They have awesome view!
                 PR_VB_JJ_JJ : { <PRP><VBP><JJ>+<CC|JJ>* } """,
             18: """
                 # impossible to order
@@ -74,7 +74,7 @@ class PatternGrammar:
             19: """
                 RB_BEFORE_NN: {<RB|RB.>+<JJ|JJ.>*<NN|NN.>+} """,
             20: """
-                # not a fan of biryani and rolls
+                # not a fan of the hotel
                 NN_IN_DT_NN_reverse : { <NN|NN.>+<IN><DT>(<CC|,>?<DT>?<JJ|JJ.>*<NN|NN.>+)+ } """,
             21: """
                 # place isnt worth the hype
@@ -86,14 +86,14 @@ class PatternGrammar:
                 NN_JJ : { <CC|DT><NN|NN.>+<JJ|JJ.>}""",
             24: """JJ_BEFORE_NN : {<RB|RB.>*<JJ|JJ.><NN|NN.>+}""",
             25: """
-                # The asparagus, truffle oil, parmesan bruschetta is a winner.
+                # The room service is a winner.
                 NN_desc_NN : { (<CC|,>*<DT>?<JJ|JJ.>*<N.|NN.>+)+<VB.|V.><IN>?<DT>?<N.|NN.>+} """,
             26: """
                 # Avoid this place
                 NN_DT_NN : { <NN.|N.><DT><NN.|N.>+}
                 """,
             27: """
-                # my favourite is the chicken biryani
+                # my favourite is the pool
                 NN_desc_NN_reverse : { <NN.|N.><VB.|V.><DT><N.|NN.>+} """,
             28: """
                 # grasps all NN if none rule captures the sentence
@@ -138,15 +138,13 @@ class PatternGrammar:
             # noqa nopep8
             'NP_After_VB_must': """NP : {<VB.|V.><DT><JJ|JJ.>*<N.|NN.>+}""",
             'NP_After_VB': """NP : {(<,|CC>*<JJ|JJ.>?<NN|NN.>+)*}""",
-            # was of great taste.,
+            # was of great value for money.,
             'NP_After_VB_i': """NP : {(<,|CC>*<JJ|JJ.|VB|VB.>?<NN|NN.>+)*}""",
-            # The food Hummus n Pita and Fish n Chips were 'mouth watering`.,
             'VB_JJ_RB_desc': """NN_JJ : {<JJ|JJ.|RB|RB.>*<VB|VB.>+}""",  # was amazing
             'RB_AFTER_VB': """VB_RB : {<VB|VB.><RB|RB.>+<JJ|JJ.|NN|NN.|VB|VB.>*}""",
-            # the service was fast.  | fast -> RB,
             'VB_all': """VB_ : { <VB|VB.>+}""",
 
-            # all verbs : i 'loved' the ambience.
+            # all verbs : i 'loved' the rooms.
             'RB_all': """RB : {<JJ|JJ.>*<RB|RB.>+}""",
 
             'JJ_all': """JJ : {<JJ|JJ.>+}""",
@@ -265,11 +263,6 @@ class PatternGrammar:
     def get_source_target_set(source_chunk, target_tuple_with_polarity):
         from grammar.chunker import Chunker
 
-        """
-        :param source_chunk: list of source chunk , extracted using
-        :param target_chunk_with_polarity:
-        :return:
-        """
 
         source_set, target_set = set(), set()
         target_chunk = target_tuple_with_polarity.word
